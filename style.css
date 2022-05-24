@@ -1,0 +1,27 @@
+body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+button{
+    background: #C67F43;
+    border: 2px solid #893F04;
+    border-radius: 0px;
+    padding: 18px 36px;
+    display: inline-block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #C67F43;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+}
+
+
+.slide_down:hover {
+    box-shadow: inset 0 100px 0 0 #893F04;
+}

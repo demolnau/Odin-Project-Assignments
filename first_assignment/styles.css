@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+  }
+   
+  body {
+    height: 100%;
+    background: #ddb8a6;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 80px;
+    margin-left: 80px;
+   
+}
+
+#row{
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+}
+.column {
+    width: 33.33%;
+    text-align: center;
+    justify-content: center;  
+    align-items: center; 
+    background-color: #989F7A;
+    border: 10px solid #7B8760;
+    padding: 20px;
+    margin: 15px;
+  }
+
+ /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  } 
+
+
+h1{
+    font-family:"Norse";
+    text-align: center;
+    font-weight: bold;
+    font-size: 100px;
+    color:  #893F04;
+}
+  
+img{
+    width: 33%;
+    align-items:center;
+    color: #893F04;
+}
+
+img.recipe{
+    width: 100%;
+    height: inherit;
+    border: 3px solid #7B8760;
+}
+
+button{
+    background: #C67F43;
+    border: 2px solid #893F04;
+    border-radius: 0px;
+    padding: 18px 36px;
+    display: inline-block;
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #C67F43;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+}
+
+
+.slide_down:hover {
+    box-shadow: inset 0 100px 0 0 #893F04;
+}
+  
+@font-face {
+    font-family: "Norse";
+    src: url("resources/Norse.otf");
+    
+}
+
+header, footer{
+    text-align: center;
+}
+
+.bg-image {
+    background-image: url("resources/Eucalyptus-leaves-Lisa-Glanz/individual_elements/Green_multileaf_branch.png");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    position: relative;
+    background-color: #cccccc;
+    height: 500px;
+    background-size: auto;
+    position: relative;
+    }
+     
