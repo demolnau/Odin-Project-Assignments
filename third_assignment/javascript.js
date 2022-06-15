@@ -10,18 +10,7 @@ var options=[
     "scissors"
 ];
 
-/*
-function player_selection(){
-    var CHOICE = window.prompt("Rock, Paper, OR Scissors?");
-    var choice= CHOICE.toLowerCase();
-    for(let i = 0; i < options.length; i++){
-        if (choice == options[i]){
-            var selection=options[i]
-            return selection
-        }
-    }
-}
-*/
+
 
 function player_selection(){
     var CHOICE = window.prompt("Rock, Paper, OR Scissors?");
