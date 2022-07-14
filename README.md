@@ -3,4 +3,6 @@
 	Assignment 2: Create a Landing Page
 	Assignment 3: Rock Paper Scissors
 	Assignment 4: Etch-A-Sketch
+	Assignment 5: Calculator
+	
 To see the projects as a live Preview : https://demolnau.github.io/Odin-Project-Assignments/
