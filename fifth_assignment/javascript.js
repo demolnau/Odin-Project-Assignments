@@ -125,15 +125,15 @@ function operate(){
 }
 
 function add(number1, number2){
-    return Number.parseFloat(number1 + number2).toFixed(5);
+    return Number.parseFloat(number1 + number2).toFixed(2);
 }
 
 function subtract(number1, number2){
-    return Number.parseFloat(number1 - number2).toFixed(5);
+    return Number.parseFloat(number1 - number2).toFixed(2);
 }
 
 function multiply(number1, number2){
-    return Number.parseFloat(number1 * number2).toFixed(5);
+    return Number.parseFloat(number1 * number2).toFixed(2);
 }
 
 function divide(number1, number2){
@@ -143,7 +143,7 @@ function divide(number1, number2){
         return "Excuse you! Try again, you fool!"
     }
     else{
-        return Number.parseFloat(number1/number2).toFixed(5);
+        return Number.parseFloat(number1/number2).toFixed(2);
     }
     
 }
