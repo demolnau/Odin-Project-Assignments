@@ -125,22 +125,22 @@ function operate(){
 }
 
 function add(number1, number2){
-    return number1 + number2;
+    return Number.parseFloat(number1 + number2).toFixed(5);
 }
 
 function subtract(number1, number2){
-    return number1 - number2;
+    return Number.parseFloat(number1 - number2).toFixed(5);
 }
 
 function multiply(number1, number2){
-    return number1 * number2;
+    return Number.parseFloat(number1 * number2).toFixed(5);
 }
 
 function divide(number1, number2){
     if (number2 == '0'){
         reset_screen();
         console.log("EXCUSE YOU! YOU MAY NOT DIVIDE BY ZERO!");
-        return "Excuse you! You may not divide by zero! Hit clear and try again, you fool!"
+        return "Excuse you! Try again, you fool!"
     }
     else{
         return Number.parseFloat(number1/number2).toFixed(5);
