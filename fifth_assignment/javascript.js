@@ -4,9 +4,7 @@ const operators=["+","-","*","/"]
 var operator=null;
 var full_selection=null;
 var number_selection=null;
-
-
-
+var last_button=null;
 
 const equalsBtn = document.getElementById('equals')
 const deleteBtn = document.getElementById('DELETE')
@@ -18,11 +16,13 @@ const display = document.createElement("display");
 
 clearBtn.onclick = clear;
 equalsBtn.onclick = operate;
+deleteBtn.onclick = delete_last_digit;
 
 nbbuttons.forEach((nbbutton) => {
   nbbutton.addEventListener('click', () => {
     button_selection=nbbutton.textContent;
     number_selection=appendNumber(button_selection);
+    last_button="number"
     add_to_display(button_selection);
   });
 });
@@ -31,6 +31,7 @@ nbbuttons.forEach((nbbutton) => {
 
 operatorBtns.forEach((button) => { 
   button.addEventListener('click', () => { 
+    last_button="operator"
     if(operator == null){
         operator = setOperator(button.textContent);
         if(number1==null){
@@ -38,7 +39,6 @@ operatorBtns.forEach((button) => {
         };
     }
     else{
-        
         number2=setNumber();
         operate();
         operator = setOperator(button.textContent);
@@ -167,6 +167,43 @@ function clear(){
     "operator:" + operator+ '\n'+
     "solution:"+ solution
     );
+
+}
+
+
+
+function delete_last_digit(){
+    var removed_char=null;
+    if (full_selection.length==0){
+        console.log("You cannot delete nothing")
+    }
+    else{
+        removed_char=full_selection.slice(-1);
+        if(full_selection.length==1){
+            clear();
+        }
+        else{
+            full_selection=full_selection.slice(0,-1)
+            console.log("Last digit removed: "+removed_char+'\n'+
+            "Now full_selection is " + full_selection);
+
+                if(last_button=="number"){
+                    number_selection=number_selection.slice(0,-1);
+                    console.log("The last button selected was a number \n Number selection is now "+number_selection);
+                }
+                else if(last_button=="operator"){
+                    operator=null;
+                    console.log("The last button selected was an operator \n Operator selection is now "+ operator)
+                }
+            
+            
+        }
+        display.textContent=`${full_selection}`;
+        screen.appendChild(display);
+    }
+    
+
+
 
 }
 
