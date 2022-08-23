@@ -4,5 +4,7 @@
 	Assignment 3: Rock Paper Scissors
 	Assignment 4: Etch-A-Sketch
 	Assignment 5: Calculator
+	Assignment 6: Sign-up Sheet
+
 	
 To see the projects as a live Preview : https://demolnau.github.io/Odin-Project-Assignments/
