@@ -6,9 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up Form</title>
     <link rel='stylesheet' href='styles.css'/>
-  <script src="javascript.js" defer></script>
+    <script src="javascript.js" defer></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital@0;1&display=swap'); </style>
 </head>
 <body>
+    <!--image from http://ohhoneybakes.com/pear-parsnip-cake-vegan-gluten-free/ -->
+    
+        <div class="container">
+            <div class="left"> 
+                <img class="background_image"src="images/pears.jfif">
+                <div id="grey_transparent_banner" > Sign-up Form : Odin Project </div>
+            </div>
+            <form action"#">
+                <div class="right"> 
+    
+                    <p> This is not a real service! You know that you need something like this in your life to help you realize your dreams. Sign-up now to get started!</p> 
+                    <p> You <em>know</em> you want to.</p>
+                
+                    <fieldset id="login_area">
+                        <div id="text">Let's do this! </div>
+                        <br>
+                        <div id="item">
+                            <label for="first_name" >First Name</label>
+                            <br>
+                            <input type="text" id="first_name" placeholder="Jane" required>
+                        </div>
+                        <div id="item">
+                            <label for="last_name">Last Name</label>
+                            <br>
+                            <input type="text" id="last_name" placeholder="Doe" required>
+                        </div>
+                        <div id="item">
+                            <label for="email">Email</label>
+                            <br>
+                            <input type="text" id="email" placeholder="janedoe@email.com" required>    
+                        </div>
+                        <div id="item">
+                            <label for="phone_number">Phone Number</label>
+                            <br>
+                            <input type="text" id="phone_number"  pattern="\d{3}[\-]\d{3}[\-]\d{4}" placeholder="123-456-7890" required>
+                        </div>
+                        <div id="item">
+                            <label for="password">Password</label>
+                            <br>
+                            <input pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" type="password" id="password" required>
+                        </div> 
+                        <div id="item">
+                            <label for="confirm_password">Confirm Password</label>
+                            <br>
+                            <input type="password" id="confirm_password" title="Passwords must match" required>
+                        </div>   
+                    </fieldset>
+                <button class="button-30" role="button">Create Account</button>
+            
+                <div class="login"> Already have an account? <a href="#">Log in</a> </div>
+            </div>
+            </form>  
+        </div>
+
+    
     
 </body>
 </html>
