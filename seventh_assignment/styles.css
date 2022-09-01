@@ -20,6 +20,11 @@ body{
     display:flex;
     flex-direction: row; 
     align-items:center;
+    background-color: #879391;
+    border-radius: 20px;
+}
+.dashboard-list:hover{
+    background-color: #9ca89e80;
 }
 
 img{
@@ -63,11 +68,14 @@ img{
     border: 2px solid;
     display:grid;
     grid-template-columns: 60% 40%;
-
 }
+
 input{
     border:2px solid #879391;
     border-radius: 5px ;
+}
+input:hover{
+    background-color: #f9f9f9;
 }
 
 .projects{
@@ -84,11 +92,14 @@ input{
     gap: 10px 10px;
 }
 .project{
-    border:2px solid;
     padding: 10px;
     border-radius: 5px;
-
+    background-color: #f0d0ce80;
 }
+.project:hover{
+    background-color: #f0d0ce;
+}
+
 .currently{
     border: 2px solid;
     display: flex;
@@ -107,10 +118,32 @@ input{
     
 }
 
+.announcement{
+    padding: 10px;
+    margin:5px;
+    border-radius: 5px;
+    background-color: #f0d0ce80;
+
+}
+.announcement:hover{
+    background-color: #f0d0ce;
+}
+
 .trending{
     display:flex;
     flex-direction: column;
     border: 2px solid;
     margin:10px;
     padding:10px;
+}
+
+.person{
+    padding: 10px;
+    margin:5px;
+    border-radius: 5px;
+    background-color: #f0d0ce80;
+}
+
+.person:hover{
+    background-color: #f0d0ce;
 }
