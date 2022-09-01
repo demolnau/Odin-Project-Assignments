@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Cormorant;
+    src: url(fonts/Cormorant/Cormorant-VariableFont_wght.ttf);
+  }
+  
 body{
     min-height: 100vh;
     margin:0;
@@ -5,7 +10,8 @@ body{
     display:grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    
+    font-family: Cormorant, Palatino, Consolas, "Courier New", monospace, 'Times New Roman', Times, serif;
+    font-size: 0.9em;
 }
 
 
