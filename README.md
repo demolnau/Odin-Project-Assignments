@@ -5,6 +5,7 @@
 	Assignment 4: Etch-A-Sketch
 	Assignment 5: Calculator
 	Assignment 6: Sign-up Sheet
+	Assignment 7: Admin Dashboard
 
 	
 To see the projects as a live Preview : https://demolnau.github.io/Odin-Project-Assignments/
