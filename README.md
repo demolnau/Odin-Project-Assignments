@@ -6,6 +6,7 @@
 	Assignment 5: Calculator
 	Assignment 6: Sign-up Sheet
 	Assignment 7: Admin Dashboard
+	Assignment 8: Library
 
 	
 To see the projects as a live Preview : https://demolnau.github.io/Odin-Project-Assignments/
