@@ -1,9 +1,10 @@
 :root{
   --book-width:280px;
+  --font-size: 1em;
 }
 @font-face {
   font-family: Cormorant;
-  src: url(fonts/Cormorant/Cormorant-VariableFont_wght.ttf);
+  src: url(../seventh_assignment/fonts/Cormorant/Cormorant-VariableFont_wght.ttf);
 }
 
 *, *:before, *:after { 
@@ -20,43 +21,56 @@ body{
   margin:0;
   padding:0;
   font-family: Cormorant, Palatino, Consolas, "Courier New", monospace, 'Times New Roman', Times, serif;
-  font-size: 0.8em;
+  font-size: var(--font-size);
+}
+
+#container{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#bookcase{
+  display:flex;
+  position:static;
 }
 
 #shelves {
+  position:static;
   display:grid;
-  grid-template-columns: repeat(auto-fill, var(--book-width));
+  grid-auto-columns: max-content;
   grid-auto-flow: row;
   gap: 10px 10px;
 }
-
-
+.item{
+  display:grid;
+  position:static;
+}
 .card{
   display:flex;
   flex-direction: column;
+  position:relative;
   width:inherit;
   justify-content:center;
   align-items:center;
   height:calc(var(--book-width)*(3/2));
+  font-weight: bold;
   top:50%;
   left: 50%;  
   border-radius: 20px 16px 12px 32px;
 }
 
 .card:after{
+  position:relative;
   height: calc((var(--book-width)/5) - 4px);
-  width: calc(var(--book-width) - 6px); 
-  bottom: 6px;
-  right:0px;
-  transform:translate(1%, 220%);
+  width: calc(var(--book-width)*0.98); 
+  transform:translate(calc(var(--book-width)*0.02), 120%);
   background: white;
   border-radius: 32px 4px 4px 32px;
   box-shadow: inset 4px 6px 0px 0px #E4E0CE;  
   background-image: linear-gradient(to bottom, transparent 6px, #E4E0CE 8px, transparent 8px, transparent 12px, #E4E0CE 12px, transparent 14px, transparent 18px,#E4E0CE 18px, transparent 20px, transparent 24px, #E4E0CE 24px, transparent 26px, transparent 30px, #E4E0CE 30px, transparent 32px, transparent 36px, #E4E0CE 36px, transparent 38px, transparent 42px, #E4E0CE 42px, transparent 44px, transparent 48px, #E4E0CE 48px, transparent 50px);     
 }
-
-
-
 
 /*
 .card{
@@ -111,7 +125,33 @@ body{
     cursor: pointer;
   }
 
-  
 
-  
+  a.boxclose{
+    position:absolute;
+    top:5px;
+    right: 5px;
+    color: #fff;
+    border: 1px solid #AEAEAE;
+    border-radius: 30px;
+    background: #605F61;
+    font-size: var(--font-size);
+    font-weight: bold;
+    line-height: 0px;
+    padding: 0.7em 0.5em;       
+}
+
+.boxclose:before {
+    content: "x";
+}
  
+
+#readbtn{
+  margin : 20px;
+  padding: 5px;
+  font-family:  Cormorant;
+  font-weight: bold;
+  font-size: var(--font-size);
+  border-radius: 20px;
+  background: #98BF64;
+  border: 2px solid #98BF64;
+}
