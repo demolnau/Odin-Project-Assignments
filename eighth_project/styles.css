@@ -27,6 +27,8 @@ html, body{
   font-weight: var(--font-weight);
   margin:0;
   padding:0;
+  background-color: var(--offwhite);
+  
 }
 
 #container{
@@ -34,7 +36,8 @@ html, body{
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: var(--offwhite);
+  position:relative;
+  
 }
 
 #bookcase{
@@ -173,3 +176,8 @@ input{
 .button-38:focus-visible {
   box-shadow: none;
 }
+
+#footer{
+  position:static;
+  bottom: 0;
+ }

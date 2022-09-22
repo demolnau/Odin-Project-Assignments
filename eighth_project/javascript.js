@@ -206,18 +206,18 @@ let theCountofMonteCristo = new Book("The Count of Monte Cristo", "Alexander Dum
 let Dune = new Book("Dune", "Frank Herbert", 1965, false)
 let Twilight = new Book("Twilight", "Stephanie Meyers","2005",true)
 let NewMoon= new Book("New Moon", "Stephanie Meyers","2006",true)
-//let their_eyes = new Book("Their Eyes Were Watching God", "Zora Neale Hurston", 1937, true)
+
 myLibrary.push(theHobbit)
 myLibrary.push(theCountofMonteCristo)
 myLibrary.push(Dune)
 myLibrary.push(Twilight)
 myLibrary.push(NewMoon)
-//myLibrary.push(their_eyes)
+
 create_book_card(theHobbit.title,theHobbit.author,theHobbit.publication_year,true)
 create_book_card(theCountofMonteCristo.title, theCountofMonteCristo.author, theCountofMonteCristo.publication_year, false)
 create_book_card(Dune.title,Dune.author,Dune.publication_year, false)
 create_book_card(Twilight.title,Twilight.author,Twilight.publication_year,true)
 create_book_card(NewMoon.title, NewMoon.author, NewMoon.publication_year,true)
-//create_book_card(their_eyes.title,their_eyes.author,their_eyes.publication_year,true)
+
 display_books_in_library()
 
