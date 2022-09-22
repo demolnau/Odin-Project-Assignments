@@ -71,12 +71,12 @@ function Book(title, author, publication_year, read) {
 function create_book_card(book_title,book_author,book_publication_year,book_read){
   //create bookcard 
   str = book_title.replace(/\s+/g, '')+"_card";
-  const item = document.createElement('div');
-  item.setAttribute('id', str );
+  //const item = document.createElement('div');
+  //item.setAttribute('id', str );
   //console.log(str)
   const bookCard = document.createElement('div'); 
   bookCard.classList.add('card')
-  //bookCard.setAttribute('id', str );
+  bookCard.setAttribute('id', str );
 
   //create a read button
   const read_button = document.createElement('button');
@@ -94,10 +94,10 @@ function create_book_card(book_title,book_author,book_publication_year,book_read
     read_button.textContent="Not read";
   }
   
-  
   //create a span X button
-  var remove_book_x = document.createElement("a");
-  remove_book_x.classList.add("boxclose");
+  var remove_book_x = document.createElement("span");
+  remove_book_x.classList.add("close");
+  remove_book_x.innerHTML = "&times;";
   bookCard.appendChild(remove_book_x); // add remove button to bookcard
   
   // create title, author, and publication elements for bookCard element
@@ -109,7 +109,6 @@ function create_book_card(book_title,book_author,book_publication_year,book_read
   const random_color = colors[Math.floor(Math.random() * colors.length)];
   bookCard.style.background = random_color;
   bookCard.style.backgroundImage = "linear-gradient(to right," + colorShade(random_color, -40)+" 48px, " +colorShade(random_color,-80)+" 50px, transparent 50px)";
-  //Add background color to button
   
 
   //assign the text to each book
@@ -136,9 +135,9 @@ function create_book_card(book_title,book_author,book_publication_year,book_read
   bookCard.appendChild(read_button)
 
   //append each bookCard to shelves container
-  item.appendChild(bookCard);
-  shelves.append(item);
-  //shelves.appendChild(bookCard);
+ // item.appendChild(bookCard);
+  //shelves.append(item);
+  shelves.appendChild(bookCard);
 
   //creates listener even for the read_button
   read_button.addEventListener("click", ()=>{
@@ -199,17 +198,23 @@ function remove_bookcard(book_title){
 
 }
 
-/*
-let theHobbit = new Book("The Hobbit", "J.R.R.Tolkien", 1937)
-let theCountofMonteCristo = new Book("The Count of Monte Cristo", "Alexander Dumas", 1844)
-let Dune = new Book("Dune", "Frank Herbert", 1965)
+
+/* Sample books to start Library with */
+
+let theHobbit = new Book("The Hobbit", "J.R.R.Tolkien", 1937, true)
+let theCountofMonteCristo = new Book("The Count of Monte Cristo", "Alexander Dumas", 1844,false)
+let Dune = new Book("Dune", "Frank Herbert", 1965, false)
+let Twilight = new Book("Twilight", "Stephanie Meyers","2005",true)
+let NewMoon= new Book("New Moon", "Stephanie Meyers","2007",true)
 myLibrary.push(theHobbit)
 myLibrary.push(theCountofMonteCristo)
 myLibrary.push(Dune)
-*/
+myLibrary.push(Twilight)
+myLibrary.push(NewMoon)
+create_book_card(theHobbit.title,theHobbit.author,theHobbit.publication_year,true)
+create_book_card(theCountofMonteCristo.title, theCountofMonteCristo.author, theCountofMonteCristo.publication_year, false)
+create_book_card(Dune.title,Dune.author,Dune.publication_year, false)
+create_book_card(Twilight.title,Twilight.author,Twilight.publication_year,true)
+create_book_card(NewMoon.title, NewMoon.author, NewMoon.publication_year,true)
+display_books_in_library()
 
-//addBookToLibrary("Dune", "Frank Herbert", 1965, false)
-//addBookToLibrary("The Count of Monte Cristo", "Alexander Dumas", 1844, false)
-//addBookToLibrary("The Hobbit", "J.R.R.Tolkien", 1937, true)
-//addBookToLibrary("Twilight", "Stephanie Meyers", 2005, true)
-//addBookToLibrary("New Moon", "Stephanie Meyers", 2007, true)
