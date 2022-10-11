@@ -7,6 +7,7 @@
 	Assignment 6: Sign-up Sheet
 	Assignment 7: Admin Dashboard
 	Assignment 8: Library
+	Assignment 9: Tic Tac Toe
 
 	
 To see the projects as a live Preview : https://demolnau.github.io/Odin-Project-Assignments/
