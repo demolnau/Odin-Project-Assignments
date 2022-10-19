@@ -5,7 +5,7 @@ let selection;
 const gameBoard = (function () {
     const gameboard = new Array(9);
     let counter = 0;
-    //let activation_status=false;
+
 
     const gameboard_items = document.querySelectorAll('.gameboard_item');
     const restart_btn= document.querySelector(".restart_btn");
@@ -14,37 +14,26 @@ const gameBoard = (function () {
     //add a 'click' listener event for each button
     gameboard_items.forEach((button) => {
       button.addEventListener('click', () => {
+        
         //if player makes no selection the symbol will be set to X for next move
         if (selection == null ) {
           selection="X"
           console.log("Console seleciton is undefined. X chosen as default.");
         }
         //if player makes a selection
-        else{
-          //if (activation_status == false){
+        else{ 
+          if (button.textContent == ""){
             button.innerHTML = selection;
-          //console.log("Player has made a choice!");
-          //activate(activation_status);
-          //console.log(activation_status);
-          ++counter;
-          alternate(counter);
-          //}
+            ++counter;
+            alternate(counter);
+          }
+          else{
+            console.log("CHEATER!")
+          }
           
         }
      })
     });
-
-    function activate(activation_status){
-      if (activation_status==false){
-        activation_status=true;
-        //console.log("this button has been activated!");
-        console.log(activation_status);
-      }
-      else{
-        console.log("CHEATER!")
-      }
-      return activation_status;
-    }
 
 
     //clear function to reset board and reset variables
