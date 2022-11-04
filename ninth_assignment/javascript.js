@@ -20,6 +20,7 @@ const gameBoard = (function () {
     let counter = 0;
     var gameOver=false;
     const gameboard_items = document.querySelectorAll('.gameboard_item');
+    
     const restart_btn= document.querySelector(".restart_btn");
     restart_btn.addEventListener('click', clear);
 
@@ -51,9 +52,21 @@ const gameBoard = (function () {
               //console.log(counter);
               if(counter>=5){
                 console.log("now we can check!");
-                winner = displayController.check_winning_combinations();
+                winner = displayController.check_winning_combinations()[0];
+                winning_combo = displayController.check_winning_combinations()[1];
+
+                for (let j=0; j<3; j++) {
+                  //console.log(j);
+                  console.log(winning_combo[j]+1);
+                  const item = document.getElementById(winning_combo[j]+1);
+                  item.classList.add("blink");
+                
+                }
+                console.log("Winning_combo: " + winning_combo);
                 if (winner!=null){
                   gameOver=true;
+                  
+        
                   console.log("No more moves are allowed!");
                   //clear();
                 }
@@ -78,6 +91,7 @@ const gameBoard = (function () {
       for(let i = 0; i < gameboard.length; i++){gameboard[i]=""};
       gameboard_items.forEach((button) => {
         button.innerHTML = "";
+        button.classList.remove("blink");
       });
     };
 
@@ -121,25 +135,33 @@ const displayController = (function () {
     [0,4,8],
     [2,4,6]
   ];
+ function get_winning_combos(){
 
+ };
   
 
   function check_winning_combinations(){
       let winner;
+      let winning_combo;
       for(let i = 0; i < winning_combos.length; i++){
+        //console.log(winning_combos[i]);
         if(current_board[winning_combos[i][0]] + current_board[winning_combos[i][1]] + current_board[winning_combos[i][2]] =="XXX"){
-          //console.log("Player X is a winner!");
+          winning_combo = winning_combos[i];
+          //console.log("Winning_combo: " + winning_combos[i] );
           winner="Player X";
         }
         else if(current_board[winning_combos[i][0]]+ current_board[winning_combos[i][1]] + current_board[winning_combos[i][2]] =="OOO"){
           //console.log("Player O is a winner!");
-          winner="Player O";
+          winning_combo = winning_combos[i];
+          //console.log("Winning_combo: " + winning_combos[i] );
+          winner="Player O";     
         }
       }
 
       if (gameBoard.get_number_of_moves_played()>=5<9){
         if (winner!=null){
           console.log(winner+" is the winner!");
+          //console.log(winning_combo)
         }
       }
 
@@ -148,9 +170,15 @@ const displayController = (function () {
           console.log("We have a tie");
         }
       }
-      return(winner);
+
+      
+      
+      
+      return[winner, winning_combo];
   };
 
+
+  //button.classList.add("blink");
 
    return{check_winning_combinations} 
 })();
