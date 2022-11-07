@@ -1,30 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One'); 
+
+body{
+  display:flex;
+  font-family: 'Fjalla One', sans-serif;
+  background-color: #ff999b;
+  justify-content: center;
+
+}
+
 .container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
 }
 
 .tic-tac-toe-board{
     display:grid;
-    grid-template-columns: repeat(3, minmax(40px,200px));
-    grid-template-rows: repeat(3, minmax(40px,50px));
-    column-gap: 10px;
-    row-gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    grid-template-columns: repeat(3, 4rem);
+    grid-template-rows: repeat(3, 4rem);
+    column-gap: 0.8rem;
+    row-gap: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
-.blink {
-    animation: blink 3s infinite;
+button{
+  background-color: #ff999b;
+  padding: 1rem 1.3rem;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.3rem;
+  position: relative;
+  margin-right: 0.1rem;
+}
+
+.elementToFadeInAndOut {
+    animation: fadeinout 4s linear 1 reverse;
+    background: #df6fde;
+    opacity:1;
   }
   
-@keyframes blink {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-      color: blue;
-    }
+  @keyframes fadeinout {
+    50% { opacity: 0; }
   }
+
+
+button:hover{
+  background-color: #ffbe91;
+}
+.chosen{
+  background-color: #7b76ff;
+}
+

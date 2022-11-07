@@ -2,16 +2,28 @@ let selection;
 
 const player = function(){
   const playerSelection = document.querySelectorAll(".selection");
+
+  function set_default_selection(){
+    selection="X";
+    const player_selection_default= document.getElementById("X");
+    player_selection_default.classList.add("chosen");
+  };
+
   playerSelection.forEach(function(button){
       button.addEventListener('click', function(){
         selection=button.innerHTML;
+        button.classList.add("chosen");
       });
     });
   function getSign(){
     return selection;
-    
   };
-  return{getSign}
+  function remove_selection(){
+    playerSelection.forEach(function(button){
+        button.classList.remove("chosen");
+    });
+  };
+  return{getSign, remove_selection, set_default_selection}
 }();
 
 //gameBoard as a module
@@ -38,7 +50,7 @@ const gameBoard = (function () {
       button.addEventListener('click', () => {
         //if player makes no selection the symbol will be set to X for next move
         if (selection == null ) {
-          selection="X";
+          player.set_default_selection();
           console.log("Console seleciton is undefined. X chosen as default.");
         }
         //if player makes a selection
@@ -57,9 +69,9 @@ const gameBoard = (function () {
 
                 for (let j=0; j<3; j++) {
                   //console.log(j);
-                  console.log(winning_combo[j]+1);
+                  console.log(winning_combo[j]+1); 
                   const item = document.getElementById(winning_combo[j]+1);
-                  item.classList.add("blink");
+                  item.classList.add("elementToFadeInAndOut");
                 
                 }
                 console.log("Winning_combo: " + winning_combo);
@@ -88,10 +100,12 @@ const gameBoard = (function () {
       selection=null;
       counter=0;
       gameOver=false;
+      player.remove_selection();
       for(let i = 0; i < gameboard.length; i++){gameboard[i]=""};
       gameboard_items.forEach((button) => {
         button.innerHTML = "";
-        button.classList.remove("blink");
+        button.classList.remove("elementToFadeInAndOut");
+        
       });
     };
 
@@ -135,10 +149,6 @@ const displayController = (function () {
     [0,4,8],
     [2,4,6]
   ];
- function get_winning_combos(){
-
- };
-  
 
   function check_winning_combinations(){
       let winner;
