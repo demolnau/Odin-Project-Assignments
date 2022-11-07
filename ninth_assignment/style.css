@@ -5,6 +5,7 @@ body{
   font-family: 'Fjalla One', sans-serif;
   background-color: #ff999b;
   justify-content: center;
+  color: #ffffff;
 
 }
 
@@ -54,5 +55,9 @@ button:hover{
 }
 .chosen{
   background-color: #7b76ff;
+}
+
+.results{
+  padding: 1rem 1.3rem;
 }
 

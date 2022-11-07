@@ -10,9 +10,16 @@ const player = function(){
   };
 
   playerSelection.forEach(function(button){
+
       button.addEventListener('click', function(){
-        selection=button.innerHTML;
-        button.classList.add("chosen");
+        if(selection==null){
+          selection=button.innerHTML;
+          button.classList.add("chosen");
+        }
+        else{
+          console.log("selection has already been set. To change the selection, reset the game");
+        }
+
       });
     });
   function getSign(){
@@ -32,6 +39,7 @@ const gameBoard = (function () {
     let counter = 0;
     var gameOver=false;
     const gameboard_items = document.querySelectorAll('.gameboard_item');
+    const results= document.querySelector('.results'); 
     
     const restart_btn= document.querySelector(".restart_btn");
     restart_btn.addEventListener('click', clear);
@@ -66,22 +74,26 @@ const gameBoard = (function () {
                 console.log("now we can check!");
                 winner = displayController.check_winning_combinations()[0];
                 winning_combo = displayController.check_winning_combinations()[1];
+                if(winner!=null){
 
-                for (let j=0; j<3; j++) {
-                  //console.log(j);
-                  console.log(winning_combo[j]+1); 
-                  const item = document.getElementById(winning_combo[j]+1);
-                  item.classList.add("elementToFadeInAndOut");
-                
-                }
-                console.log("Winning_combo: " + winning_combo);
-                if (winner!=null){
-                  gameOver=true;
+                  for (let j=0; j<3; j++) {
+                    //console.log(winning_combo[j]);
+                    //console.log(winning_combo[j]+1); 
+                    //console.log(typeof winning_combo[j])
+                    const item = document.getElementById(winning_combo[j]+1);
+                    item.classList.add("elementToFadeInAndOut");
                   
-        
-                  console.log("No more moves are allowed!");
-                  //clear();
+                  }
+                  console.log("Winning_combo: " + winning_combo);
+                  if (winner!=null){
+                    gameOver=true;
+                    
+          
+                    console.log("No more moves are allowed!");
+                    //clear();
+                  }
                 }
+
               }
             }
             else{
@@ -101,6 +113,7 @@ const gameBoard = (function () {
       counter=0;
       gameOver=false;
       player.remove_selection();
+      results.innerHTML="";
       for(let i = 0; i < gameboard.length; i++){gameboard[i]=""};
       gameboard_items.forEach((button) => {
         button.innerHTML = "";
@@ -137,6 +150,7 @@ const gameBoard = (function () {
 //displayController as a module
 const displayController = (function () {
   //console.log(gameBoard.getBoard());
+  const results= document.querySelector('.results'); 
   var current_board = gameBoard.getBoard();
   //console.log(current_board);
   let winning_combos =[
@@ -168,16 +182,17 @@ const displayController = (function () {
         }
       }
 
-      if (gameBoard.get_number_of_moves_played()>=5<9){
+      if (gameBoard.get_number_of_moves_played()>=5 && gameBoard.get_number_of_moves_played()<9){
         if (winner!=null){
           console.log(winner+" is the winner!");
-          //console.log(winning_combo)
+          results.innerHTML=`${winner}`+ " is the winner!";
         }
       }
 
       if (gameBoard.get_number_of_moves_played()==9){
         if(winner == null){
           console.log("We have a tie");
+          results.innerHTML="We have a tie!";
         }
       }
 
