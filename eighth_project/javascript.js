@@ -56,8 +56,8 @@ const colorShade = (col, amt) => {
   return `#${rr}${gg}${bb}`
 }
 
-
-function Book(title, author, publication_year, read) {
+class Book { 
+  constructor(title, author, publication_year, read){
     this.title = title
     this.author = author
     this.publication_year = publication_year
@@ -66,6 +66,10 @@ function Book(title, author, publication_year, read) {
     this.info = function() { 
       console.log(title + " by " + author + ", published in " + publication_year+". Read: "+ read) ;
     } 
+  }
+
+
+
 }
 
 function create_book_card(book_title,book_author,book_publication_year,book_read){
