@@ -1,0 +1,9 @@
+@font-face {
+	font-family:'Roboto',sans-serif;
+	src: url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Roboto:wght@300&display=swap')
+}
+.hello {
+	color : red;
+	background: url('./plant.png');
+	font-family: 'Roboto',sans-serif;
+}
