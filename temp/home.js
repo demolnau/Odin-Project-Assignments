@@ -1,11 +1,10 @@
 
-
 createHomePage = function() {
-  const home_header= document.createElement("h1");
-  home_header.setAttribute("id","home_header");
-  home_header.textContent="Home";
-  console.log("Home page created");
-  return home_header
+    const home_header= document.createElement("h1");
+    home_header.setAttribute("id","home_header");
+    home_header.textContent="Home";
+    console.log("Home page created");
+    return home_header
 }
 
 const main = document.querySelector('#main');

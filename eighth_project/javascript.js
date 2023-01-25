@@ -67,9 +67,6 @@ class Book {
       console.log(title + " by " + author + ", published in " + publication_year+". Read: "+ read) ;
     } 
   }
-
-
-
 }
 
 function create_book_card(book_title,book_author,book_publication_year,book_read){
