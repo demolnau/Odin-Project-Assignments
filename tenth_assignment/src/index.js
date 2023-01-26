@@ -1,61 +1,74 @@
-import 'styles.css'
-import loadHome from './modules/home';
-import loadMenu from './modules/menu';
-import loadContact from './modules/contact';
+import './styles.css'
+import loadHome from './modules/home.js';
+import loadMenu from './modules/menu.js';
+import loadContact from './modules/contact.js';
 
-init();
-createTabs = function() {
+
+function createHeader(){
+  const header = document.createElement("h1")
+  header.setAttribute("id", "header")
+  header.textContent = "The Witch's Cauldron"
+  console.log("header created")
+  return header
+}
+
+function createTabs() {
   const tabs= document.createElement("div");
-  tabs.classList("tab")
+  tabs.setAttribute("class","tabs")
   console.log("Tabs created");
 
   const tab_home = document.createElement("button")
   const tab_menu = document.createElement("button")
   const tab_contact = document.createElement("button")
+  tab_home.setAttribute("id","home")
+  tab_menu.setAttribute("id","menu")
+  tab_contact.setAttribute("id","contact")
+  
+  tab_home.classList.add('tab')
+  tab_menu.classList.add('tab')
+  tab_contact.classList.add('tab')
 
-  tab_home.classList("tablink")
-  tab_menu.classList("tablink")
-  tab_contact.clastList("tablink")
+  tab_home.textContent= "Home";
+  tab_menu.textContent = "Menu";
+  tab_contact.textContent = "Contact";
 
-  tab_home.textContent("Home")
-  tab_menu.textContent("Menu")
-  tab_contact.textContent("Contact")
+ 
 
-  tab_home.setAttribute("onclick", "loadHome")
-  tab_menu.setAttribute("onclick","loadMenu")
-  tab_contact.setAttribute("onclick","loadContact")
+  tab_home.onclick = loadHome;
+  tab_menu.onclick = loadMenu;
+  tab_contact.onclick = loadContact;
 
+  
+  tabs.appendChild(tab_home)
+  tabs.appendChild(tab_menu)
+  tabs.appendChild(tab_contact)
 
   return tabs
 }
 
-/*
-function components() {
-  const homeBtn = document.getElementById('home');
-  const menuBtn=document.getElementById('menu');
-  const contactBtn=document.getElementById('contact');
-
-  homeBtn.onclick = loadHome;
-  element.appendChild(homeBtn);
-
-  menuBtn.onclick= loadMenu;
-  element.appendChild(menuBtn);
-
-  contactBtn.onclick = loadContact;
-  element.appendChild(contactBtn);
-
-  return element;
-}
-
-document.body.appendChild(components());
-*/
-
-
 function init(){
+  const content = document.getElementById('content');
+  const header =document.getElementById('header')
+  const main = document.getElementById('main')
+  main.textContent= ""
+
+  const footer = document.getElementById('footer')
+  header.appendChild(createHeader())
+  nav.appendChild(createTabs())
+
   //loadPage();
-  loadHome();
-  loadMenu();
-  loadContact();
-  //loadNavEvents();
+  //let main = document.createElement("div")
+  //main.setAttribute("id","main")
+  //console.log(div.outerHTML);
+  //console.log("main division has been created")
+  
+  //createTabs();
+  //content.appendChild(main)
+  //content.appendChild(components())
+  //loadMenu();
+  //loadContact();
+  //return main
+ // return content
 }
 
+document.body.appendChild(init());

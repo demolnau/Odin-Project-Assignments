@@ -96,32 +96,32 @@ createMenuItem=function(newMenuItem){
 
 
 function loadMenu(){
-let myMenu = new Menu();
-//const main =document.getElementById("main");
-//const main =document.createElement("main");
-const main = document.querySelector('#main');
-main.textContent="";
-main.appendChild(myMenu.createMenu());
+  let myMenu = new Menu();
+  //const main =document.getElementById("main");
+  //const main =document.createElement("main");
+  const main = document.querySelector('#main');
+  main.textContent="";
+  main.appendChild(myMenu.createMenu());
 
 
-let witchs_brew= new menuItem("Witch's Brew","midori melon liquor, orange juice, lemon lime soda", "one toad")
-let vampires_kiss= new menuItem("Vampire's Kiss", "Rasberries, Cranberry juice, Sparking Wine, Vodka, Chambord", "vampire fang")
-let necromancer = new menuItem("Necromancer","Gin, Cointreau, lemon juice, vermouth, abisinthe, creme de violette", "coffin nail")
-let zombie_brain = new menuItem("Zombie Brain Shot", "Peach Schnapps, creme de menthe, Baileys, grenadine", "brains")
-myMenu.addMenuItem(witchs_brew)
-myMenu.addMenuItem(vampires_kiss)
-myMenu.addMenuItem(necromancer)
-myMenu.addMenuItem(zombie_brain)
+  let witchs_brew= new menuItem("Witch's Brew","midori melon liquor, orange juice, lemon lime soda", "one toad")
+  let vampires_kiss= new menuItem("Vampire's Kiss", "Rasberries, Cranberry juice, Sparking Wine, Vodka, Chambord", "vampire fang")
+  let necromancer = new menuItem("Necromancer","Gin, Cointreau, lemon juice, vermouth, abisinthe, creme de violette", "coffin nail")
+  let zombie_brain = new menuItem("Zombie Brain Shot", "Peach Schnapps, creme de menthe, Baileys, grenadine", "brains")
+  myMenu.addMenuItem(witchs_brew)
+  myMenu.addMenuItem(vampires_kiss)
+  myMenu.addMenuItem(necromancer)
+  myMenu.addMenuItem(zombie_brain)
 
-const container = document.createElement("div");
-container.setAttribute("id","container")
+  const container = document.createElement("div");
+  container.setAttribute("id","container")
 
-for (var i = 0; i < myMenu.menuItems.length; i++) {
- container.appendChild(myMenu.menuItems[i].createMenuItem(myMenu.menuItems[i]));
+  for (var i = 0; i < myMenu.menuItems.length; i++) {
+    container.appendChild(myMenu.menuItems[i].createMenuItem(myMenu.menuItems[i]));
+    }
+  main.appendChild(container);
 }
-main.appendChild(container);
-}
 
-loadMenu();
+//loadMenu();
 
-//export default loadMenu;
+export default loadMenu;

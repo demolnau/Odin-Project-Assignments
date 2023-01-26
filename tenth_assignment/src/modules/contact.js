@@ -85,6 +85,7 @@ createContact=function(newContactItem){
 function loadContactPage(){
   let myContacts = new Contacts();
   const main = document.querySelector('#main');
+  main.textContent="";
   main.appendChild(myContacts.createContactPage());
 
   let baba_yaga= new contactItem("Baba Yaga","Brew Master", "baba_yaga_chicken_feet@cauldron.com","123-456-7890")
@@ -103,6 +104,6 @@ function loadContactPage(){
 }
 
 
-loadContactPage();
+//loadContactPage();
 
-//export default loadContactPage;
+export default loadContactPage;
