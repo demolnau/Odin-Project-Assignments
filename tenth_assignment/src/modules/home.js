@@ -10,19 +10,18 @@ function createHomePage() {
 function createDescriptionItem(){  
   const description= document.createElement("div")
   description.setAttribute("id","item")
-  const left_side=document.createElement("div")
-  left_side.setAttribute("id","leftside")
 
-  const description_header = document.createElement('p');
+  const description_header = document.createElement('div');
   description_header.textContent = "The Cauldron" ;
-  description_header.style.fontFamily="haunted_moon"
+  description_header.setAttribute("id","item_header")
+
   const description_paragraph = document.createElement('p')
+  description_paragraph.setAttribute("id","item_content")
   description_paragraph.textContent ="blah blah blah we brew the potions, you drink them"
 
-  left_side.appendChild(description_header)
-  left_side.appendChild(description_paragraph)
-  description.appendChild(left_side)
-  //main.appendChild(description)
+  description.appendChild(description_header)
+  description.appendChild(description_paragraph)
+
   return description
 
 }
@@ -32,18 +31,53 @@ function createDescriptionItem(){
 function createReviewItem(){
   const review = document.createElement("div")
   review.setAttribute("id","item")
-  const review_element = document.createElement("div")
-  review_element.setAttribute("id","leftside")
-
-  const review_header = document.createElement("p")
+  const review_header = document.createElement("div")
+  review_header.setAttribute("id","item_header")
   review_header.textContent="Reviews"
-  review_header.style.fontFamily="haunted_moon"
-  const reviewer1= document.createElement("p")
-  reviewer1.textContent= "I don't know what was in that stuff, but dang does it work miracles! I am on husband number three now! -Barb"
+  
+  const  reviewer1= document.createElement("div")
+  reviewer1.setAttribute("id","item_content")
 
-  review_element.appendChild(review_header)
-  review_element.appendChild(reviewer1)
-  review.appendChild(review_element)
+  const left_side=document.createElement("div")
+  left_side.setAttribute("id","leftside")
+  left_side.style.maxWidth="40%"
+  const star=document.createElement("img")
+  star.src="../src/images/star.png"
+  star.style.maxWidth= "20%"
+  star.style.height="auto"
+  left_side.appendChild(star)
+  const star2=document.createElement("img")
+  star2.src="../src/images/star.png"
+  star2.style.maxWidth= "20%"
+  star2.style.height="auto"
+  left_side.appendChild(star2)
+
+  const star3=document.createElement("img")
+  star3.src="../src/images/star.png"
+  star3.style.maxWidth= "20%"
+  star3.style.height="auto"
+  left_side.appendChild(star3)
+  const star4=document.createElement("img")
+  star4.src="../src/images/star.png"
+  star4.style.maxWidth= "20%"
+  star4.style.height="auto"
+  left_side.appendChild(star4)
+  const star5=document.createElement("img")
+  star5.src="../src/images/star.png"
+  star5.style.maxWidth= "20%"
+  star5.style.height="auto"
+  left_side.appendChild(star5)
+  
+  const written_review = document.createElement("p")
+  written_review.setAttribute("id","rightside")
+  written_review.textContent= "I don't know what was in that stuff, but dang does it work miracles! I am on husband number three now! -Barb"
+  
+
+  reviewer1.appendChild(left_side)
+  reviewer1.appendChild(written_review)
+
+  review.appendChild(review_header)
+  review.appendChild(reviewer1)
   return review
 }
 
@@ -53,20 +87,25 @@ function createReviewItem(){
 function createHours(){
   const hours = document.createElement("div")
   hours.setAttribute("id", "item")
-  const hour_element = document.createElement("div")
-  hour_element.setAttribute("id","leftside")
   
-  const hours_header= document.createElement('p')
+  const hours_header= document.createElement('div')
   hours_header.textContent="Hours"
-  hours_header.style.fontFamily="haunted_moon"
+  hours_header.setAttribute("id","item_header")
   
-  const sunday = document.createElement('p')
-  const monday = document.createElement('p')
-  const tuesday = document.createElement('p')
-  const wednesday = document.createElement('p')
-  const thursday = document.createElement('p')
-  const friday = document.createElement('p')
-  const saturday = document.createElement('p')
+  const hour_content= document.createElement("div")
+  hour_content.setAttribute("id","item_content")
+
+  const hour_element= document.createElement("p")
+  hour_element.setAttribute("id","rightside")
+  
+  
+  const sunday = document.createElement('div')
+  const monday = document.createElement('div')
+  const tuesday = document.createElement('div')
+  const wednesday = document.createElement('div')
+  const thursday = document.createElement('div')
+  const friday = document.createElement('div')
+  const saturday = document.createElement('div')
   
   sunday.textContent="Sunday : 2pm-10pm"
   monday.textContent="Monday :  9am-1pm"
@@ -77,7 +116,7 @@ function createHours(){
   saturday.textContent="Saturday : 2pm - 10pm"
   
   
-  hour_element.appendChild(hours_header)
+  
   hour_element.appendChild(sunday)
   hour_element.appendChild(monday)
   hour_element.appendChild(tuesday)
@@ -86,7 +125,10 @@ function createHours(){
   hour_element.appendChild(friday)
   hour_element.appendChild(saturday)
   
-  hours.appendChild(hour_element)
+  hour_content.appendChild(hour_element)
+  hours.appendChild(hours_header)
+  hours.appendChild(hour_content)
+
   return hours
 }
 
@@ -99,15 +141,19 @@ function createLocationItem(){
   address.setAttribute("id", "item")
   const location_element = document.createElement("div")
   location_element.setAttribute("id","leftside")
-  const location_header= document.createElement("p")
+  const location_header= document.createElement("div")
   location_header.textContent="Location"
-  location_header.style.fontFamily="haunted_moon"
-  const address_for_you=document.createElement('p')
-  address_for_you.textContent="123 Chicken Feet Run"
+  location_header.setAttribute("id","item_header")
+  const address_for_you=document.createElement('div')
+  address_for_you.setAttribute("id","item_content")
+  const right_side= document.createElement("p")
+  right_side.setAttribute("id","rightside")
+  right_side.textContent="123 Chicken Feet Run Blackforest, Germany 12345-67990"
+  
+  address_for_you.appendChild(right_side)
+  address.appendChild(location_header)
+  address.appendChild(address_for_you)
 
-  location_element.appendChild(location_header)
-  location_element.appendChild(address_for_you)
-  address.appendChild(location_element)
   return address
 }
 
@@ -121,7 +167,7 @@ function loadHome(){
   main.appendChild(createReviewItem())
   main.appendChild(createHours())
   main.appendChild(createLocationItem())
-
+  return main;
 }
 //loadHome()
-export default loadHome
+export default loadHome;

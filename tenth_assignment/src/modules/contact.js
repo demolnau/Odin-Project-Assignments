@@ -1,3 +1,5 @@
+import baba_yaga_picture from "../images/baba_yaga.jpeg"
+import anise_fartsparkler_picture from '../images/anise_fartsparkler.jpg'
 
 class Contacts{
   constructor(){
@@ -42,9 +44,18 @@ constructor(name, role, email, phone){
 createContact=function(newContactItem){
   const contact= document.createElement("div")
   contact.setAttribute("id","item")
+  const contact_header = document.createElement("div")
+  //contact_header.setAttribute("id","item_header")
+  //contact_header.textContent=newContactItem.name;
+
+  const contact_content = document.createElement("div")
+  contact_content.setAttribute("id","item_content")
 
   const left_side=document.createElement("div")
   left_side.setAttribute("id","leftside")
+  left_side.style.height="200px"
+  left_side.style.maxWidth="35%"
+
   const right_side=document.createElement("div")
   right_side.setAttribute("id","rightside")
 
@@ -52,9 +63,9 @@ createContact=function(newContactItem){
 
   //create menu item elements
   const contactName = document.createElement('p');
-  const contactRole = document.createElement('p');
-  const contactEmail= document.createElement('p');
-  const contactPhone= document.createElement('p');
+  const contactRole = document.createElement('div');
+  const contactEmail= document.createElement('div');
+  const contactPhone= document.createElement('div');
 
 
    //assign the values to the menu items
@@ -63,33 +74,46 @@ createContact=function(newContactItem){
   contactName.style.textShadow=" 2px 4px 4px #CF7BE6" ;
   contactRole.textContent = newContactItem.role;
   contactEmail.textContent = "Email: " + newContactItem.email;
+  contactEmail.style.overflow = "hidden";
+  contactEmail.style.textOverflow= "ellipsis";
+  contactEmail.style.wordBreak = "true";
+  //contactEmail.style.fontSize = "0.6em";
+  //contactEmail.style.maxHeight = "2em";
   contactPhone.textContent = "Phone " + newContactItem.phone;
-  //getting image for the food item
-  const contactImage = document.createElement("img");
-  contactImage.src = `images/${newContactItem.name.toLowerCase().replace(/ /g,"_").replace(/\'/g,"")}_potion.png`;
-  contactImage.alt = `${newContactItem.name}`;
-  
-  left_side.appendChild(contactImage);
+  //getting image for the contacts
+  const contactImage=new Image();
+  if(newContactItem.name=='Anise Fartsparkler'){
+    contactImage.src = anise_fartsparkler_picture;
+  }
+  else{
+    contactImage.src = baba_yaga_picture;
+  }
+  console.log(contactImage.src)
+  left_side.appendChild(contactImage)
+
   right_side.appendChild(contactName);
   right_side.appendChild(contactRole);
   right_side.appendChild(contactEmail);
   right_side.appendChild(contactPhone);
 
-  contact.appendChild(left_side);
-  contact.appendChild(right_side);
+  contact_content.appendChild(left_side);
+  contact_content.appendChild(right_side);
+  //contact.appendChild(contact_header);
+  contact.appendChild(contact_content)
   //console.log("item was added")
-  console.log(contactName.textContent + " was added to page")
+ 
   return contact;
 }
 }
+
 function loadContactPage(){
   let myContacts = new Contacts();
   const main = document.querySelector('#main');
   main.textContent="";
   main.appendChild(myContacts.createContactPage());
 
-  let baba_yaga= new contactItem("Baba Yaga","Brew Master", "baba_yaga_chicken_feet@cauldron.com","123-456-7890")
-  let anise_fartsparkler= new contactItem("Anise Fartsparkler", "Apprentice","anise_fartsparkler_rainbows@cauldron.com","234-567-8901")
+  let baba_yaga= new contactItem("Baba Yaga","Brew Master", "chicken_feet@cauldron.com","123-456-7890")
+  let anise_fartsparkler= new contactItem("Anise Fartsparkler", "Apprentice","anise_fartsparkler@cauldron.com","234-567-8901")
   myContacts.addContactItem(baba_yaga)
   myContacts.addContactItem(anise_fartsparkler)
 

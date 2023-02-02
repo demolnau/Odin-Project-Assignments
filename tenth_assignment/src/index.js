@@ -2,6 +2,7 @@ import './styles.css'
 import loadHome from './modules/home.js';
 import loadMenu from './modules/menu.js';
 import loadContact from './modules/contact.js';
+import crystalBall from './images/crystal_ball.png'
 
 
 function createHeader(){
@@ -47,28 +48,21 @@ function createTabs() {
 }
 
 function init(){
-  const content = document.getElementById('content');
+  //const content = document.getElementById('content');
   const header =document.getElementById('header')
   const main = document.getElementById('main')
-  main.textContent= ""
-
+  //main.textContent= ""
   const footer = document.getElementById('footer')
-  header.appendChild(createHeader())
-  nav.appendChild(createTabs())
-
-  //loadPage();
-  //let main = document.createElement("div")
-  //main.setAttribute("id","main")
-  //console.log(div.outerHTML);
-  //console.log("main division has been created")
+  const crystal_ball = new Image()
+  crystal_ball.src = crystalBall;
+  crystal_ball.style.maxWidth="20%";
   
-  //createTabs();
-  //content.appendChild(main)
-  //content.appendChild(components())
-  //loadMenu();
-  //loadContact();
-  //return main
- // return content
+  header.appendChild(createHeader());
+  nav.appendChild(createTabs());
+  footer.appendChild(crystal_ball);
+
+  loadHome();
+
 }
 
-document.body.appendChild(init());
+init();

@@ -15,7 +15,7 @@ class Menu{
     for (let i =0; i<this.menuItems.length; i++){
       if(this.menuItems[i].name==name)
       this.menuItems.splice(i,1);
-      console.log(this.menuItems);
+      //console.log(this.menuItems);
     }
   }
   drinklist= function(){
@@ -55,9 +55,14 @@ constructor(name, description, price){
 createMenuItem=function(newMenuItem){
   const potion= document.createElement("div")
   potion.setAttribute("id","item")
+  const potion_content= document.createElement("div")
+  potion_content.setAttribute("id","item_content")
 
   const left_side=document.createElement("div")
   left_side.setAttribute("id","leftside")
+  left_side.style.maxWidth="40%"
+  left_side.style.height="70%"
+
   const right_side=document.createElement("div")
   right_side.setAttribute("id","rightside")
 
@@ -79,15 +84,17 @@ createMenuItem=function(newMenuItem){
   console.log(newMenuItem.name)
   //getting image for the food item
   const menuItem_Image = document.createElement("img");
-  menuItem_Image.src = `images/${newMenuItem.name.toLowerCase().replace(/ /g,"_").replace(/\'/g,"")}_potion.png`;
+  menuItem_Image.src = `../src/images/${newMenuItem.name.toLowerCase().replace(/ /g,"_").replace(/\'/g,"")}_potion.png`;
   menuItem_Image.alt = `${newMenuItem.name}`;
+  console.log("image added from : "+ menuItem_Image.src + " using the name "+ newMenuItem.name)
   
   left_side.appendChild(menuItem_Image);
   right_side.appendChild(menuItem_Name);
   right_side.appendChild(menuItem_Components);
   right_side.appendChild(menuItem_Price);
-  potion.appendChild(left_side);
-  potion.appendChild(right_side);
+  potion_content.appendChild(left_side);
+  potion_content.appendChild(right_side);
+  potion.appendChild(potion_content)
   //console.log("item was added")
   console.log(menuItem_Name.textContent + " was added to page")
   return potion;
@@ -97,12 +104,9 @@ createMenuItem=function(newMenuItem){
 
 function loadMenu(){
   let myMenu = new Menu();
-  //const main =document.getElementById("main");
-  //const main =document.createElement("main");
   const main = document.querySelector('#main');
   main.textContent="";
   main.appendChild(myMenu.createMenu());
-
 
   let witchs_brew= new menuItem("Witch's Brew","midori melon liquor, orange juice, lemon lime soda", "one toad")
   let vampires_kiss= new menuItem("Vampire's Kiss", "Rasberries, Cranberry juice, Sparking Wine, Vodka, Chambord", "vampire fang")

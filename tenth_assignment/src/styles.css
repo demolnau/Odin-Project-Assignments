@@ -6,12 +6,13 @@ body{
     margin:0;
     padding:0;
     background-color: #F4D9E5;
-}
-#main{
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;  
 }
+
 #container{
     display:grid;
     row-gap:20px;
@@ -22,36 +23,81 @@ body{
 }
 #item{
     display:flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
-    text-align:center;
     background-color: #F0B8DF;
     border: 2px solid #EB99EB;
     border-radius:10px;
     margin:10px;
     width: 400px;
-
+    max-height: 300px;;
   }
+#item_header{
+    display:flex;
+    font-family: "haunted_moon";
+    font-size:larger;
+    margin-top: 0.2em;
+}
+#item_content{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align:center;
+    /*
+    background-color: #F0B8DF;
+    border: 2px solid #EB99EB;
+    */
+    border-radius:10px;
+    margin:10px;
+    width: 98%;
+    height: 80%
+}
 h1{
     font-family: haunted_moon;
-    text-shadow: 2px 4px 4px #F0B8DF;
+    text-shadow: 2px 4px 4px #EB99EB;
     padding:10px;
-    
 }
 
 
 #leftside{
-    max-width:60%;
-    height:auto;
     display:flex;
-    flex-direction:column;
+    border-radius:10px;
+    padding:10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    /*
+    background-color: #F0B8DF;
+    */
 }
 
 #rightside{
+    max-width:50%;
+    position:relative;
+    height:auto;
+    display:flex;
+    flex-direction:column;
     background-color: #EB99EB;
     border-radius:10px;
     padding:10px;
-    margin-right: 20px;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    margin-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
+
+button{
+    background-color: #6B42DD;
+    padding: 1rem 1.3rem;
+    border: 2px solid #6B42DD;
+    color: #ffffff;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
+    position: relative;
+    margin-right: 0.1rem;
+    border-radius:10px;
+  }
+
+  button:hover{
+    background-color: #EB99EB;
+  }
