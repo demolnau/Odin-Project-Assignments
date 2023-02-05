@@ -3,6 +3,7 @@ import loadHome from './modules/home.js';
 import loadMenu from './modules/menu.js';
 import loadContact from './modules/contact.js';
 import crystalBall from './images/crystal_ball.png'
+import cloudsBackground from './images/clouds_background.jpg';
 
 
 function createHeader(){
@@ -48,18 +49,27 @@ function createTabs() {
 }
 
 function init(){
-  //const content = document.getElementById('content');
+
+  const content = document.getElementById('content');
+  const clouds = new Image();
+  clouds.src = cloudsBackground;
+  content.appendChild(clouds)
+  //const bi = document.getElementsByClassName("body");
+
   const header =document.getElementById('header')
-  const main = document.getElementById('main')
+  //const main = document.getElementById('main')
   //main.textContent= ""
+
+  /*
   const footer = document.getElementById('footer')
   const crystal_ball = new Image()
   crystal_ball.src = crystalBall;
   crystal_ball.style.maxWidth="20%";
-  
+  footer.appendChild(crystal_ball);
+  */
   header.appendChild(createHeader());
   nav.appendChild(createTabs());
-  footer.appendChild(crystal_ball);
+  
 
   loadHome();
 
