@@ -26,6 +26,24 @@ html, body{
     background-position: top;
     -webkit-mask-image:-webkit-gradient(linear,left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
+#header, #nav, #footer{
+    position: fixed;
+    padding:10px;
+    width:100%;
+}
+#header{
+    top:20px;
+}
+#nav{ 
+    top:100px;
+}
+#main{
+    position: fixed;
+    padding:10px;
+    top:150px;
+}
+
+
 
 #container{
 
