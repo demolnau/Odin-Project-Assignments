@@ -1,20 +1,12 @@
 @font-face {
     font-family: "haunted_moon";
-    src: url(font/october-moon-font/OctoberMoon-deql.ttf);
+    src: url(./font/october-moon-font/OctoberMoon-deql.ttf);
   }
 html, body{
     margin:0;
     padding:0;
     min-height:100%;
     min-width: 100%;
-    /*
-    background-color: #F4D9E5;
-
-    background-image: url(images/clouds_background.JPG),  linear-gradient(to bottom, #d69194,75%,#f1beb4); 
-    background-repeat:no-repeat;
-    background-position: top;
-    background:#f1beb4;
-    */
     background-color:#efaa9e;
     z-index:-2;
     display:flex;
@@ -28,7 +20,7 @@ html, body{
     position:absolute;
     top:0;
     z-index:-1;
-    background-image: url(images/clouds_background.JPG),  linear-gradient(to bottom, #6b4b88,50%,#bd697d); 
+    background-image: url(images/clouds_background.jpg),  linear-gradient(to bottom, #6b4b88,50%,#bd697d); 
     min-width:100%;
     background-repeat:no-repeat;
     background-position: top;

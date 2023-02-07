@@ -2,7 +2,7 @@ import './styles.css'
 import loadHome from './modules/home.js';
 import loadMenu from './modules/menu.js';
 import loadContact from './modules/contact.js';
-import crystalBall from './images/crystal_ball.png'
+//import crystalBall from './images/crystal_ball.png'
 import cloudsBackground from './images/clouds_background.jpg';
 
 
